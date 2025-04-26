@@ -35,5 +35,9 @@ app.use("/api/v1/job", jobRouter);
 app.use("/api/v1/application", applicationRouter);
 dbConnection();
 
+app.get("/", (req, res) => {
+  res.send("Yay!! Backend of jobportal app is now accessible");
+});
+
 app.use(errorMiddleware);
 export default app;
