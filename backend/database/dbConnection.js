@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
-import { MONGO_URI } from './utils/utils.js';
+import { MONGO_URI } from "../utils/utils.js";
 
 export const dbConnection = () => {
   mongoose
-    .connect(MONGO_URI, {
+    .connect(String(MONGO_URI), {
       dbName: "MERN_JOB_SEEKING_WEBAPP",
     })
     .then(() => {
