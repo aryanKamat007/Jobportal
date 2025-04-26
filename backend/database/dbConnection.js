@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
+import { MONGO_URI } from './utils/utils.js';
 
 export const dbConnection = () => {
   mongoose
-    .connect(process.env.MONGO_URI, {
+    .connect(MONGO_URI, {
       dbName: "MERN_JOB_SEEKING_WEBAPP",
     })
     .then(() => {

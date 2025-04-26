@@ -8,13 +8,13 @@ import cors from "cors";
 import { errorMiddleware } from "./middlewares/error.js";
 import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload";
-
+import { FRONTEND_URL } from "./utils/utils.js";
 const app = express();
 config({ path: "./config/.env" });
 
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL],
+    origin: [FRONTEND_URL],
     method: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
